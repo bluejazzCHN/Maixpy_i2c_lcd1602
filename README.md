@@ -1,6 +1,7 @@
 Maixpy_i2c_lcd1602
 ==================
-class of i2c_lcd1602 using maixpy for K210 devices. for example maixduino and m5stickV
+class of i2c_lcd1602 using maixpy for K210 devices extend external sensor. for example maixduino and m5stickV
+you can know how to use maixpy to implement i2c communication to send command, send data to slave deivec in i2c bus.
 
 Reference
 ----------
