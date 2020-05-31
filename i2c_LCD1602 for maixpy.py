@@ -3,7 +3,7 @@ from machine import I2C
 import time
 
 class LCD:
-    def __init__(self,i2c_addr = 0x27,backlight = True,scl=31,sda=30):
+    def __init__(self,i2c_addr = 0x27,backlight = True,scl=30,sda=31):
 
         #device constants
         self.I2C_ADDR = i2c_addr
@@ -19,7 +19,7 @@ class LCD:
         else:
             self.LCD_BACKLIGHT = 0x00 #lcd off
 
-        self.ENABLE = 0b00000100 # enable bit
+        self.ENABLE = 0b00000100 # enable bit ， E RW RS 三个由高到低构成了控制位，所以enbale bit：0b00000100
 
         # Timing constants
         self.E_PULSE = 0.0001
@@ -100,11 +100,11 @@ class LCD:
         print(devices)
 
 
-lcd = LCD(scl=31,sda=30)
+lcd = LCD(0x27,scl=30,sda=31)
 lcd.i2c_scan()
 lcd.clear()
-lcd.message('123456',1)
-lcd.message('123',2)
+lcd.message('123567890',1)
+#lcd.message('BluejazzChn11',2)
 
 
 
